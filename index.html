@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GLEISER,DANON--COLLABORATION IN JAZZ</title>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+      <style>
+  .tooltip{
+    position: absolute;
+    width: 120;
+    height: auto;
+    font-family: simsun;
+    font-size: 14px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h3 class="text-center">
+        GLEISER,DANON--COLLABORATION IN JAZZ
+      </h3>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="col-md-4 column">
+      <h3 class="text-center">
+        设置力导向布局参数
+      </h3>
+      <form role="form" name="paramter">
+        <div class="form-group">
+           <label for="alphaMin">alphaMin:（衰减系数，越小迭代次数越多，效果越好）</label>
+           <input class="form-control" id="alphaMin" type="text" name="alphaMin" placeholder="请输入一个0-1之间的数" value=0.001>
+        </div>
+        <div class="form-group">
+           <label for="velocityDecay">velocityDecay:（衰减速度，越慢效果越好）</label>
+           <input class="form-control" id="velocityDecay" type="text" name="velocityDecay" placeholder="请输入一个0-1之间的数" value=0.6>
+        </div>
+        <div class="form-group">
+           <label for="DistanceForLink">DistanceForLink:（近似为弹簧长度）</label>
+           <input class="form-control" id="DistanceForLink" type="text" name="DistanceForLink" placeholder="请输入一个正数" value=30>
+        </div>
+        <div class="form-group">
+           <label for="StrengthForForceCharge">StrengthForForceCharge:（电场强度）</label>
+           <input class="form-control" id="StrengthForForceCharge" type="text" name="StrengthForForceCharge" placeholder="正数可模拟引力，负数可模拟斥力" value=-30>
+        </div>
+        <div class="form-group">
+           <label for="StrengthForForceCollision">StrengthForForceCollision:（碰撞强度）</label>
+           <input class="form-control" id="StrengthForForceCollision" type="text" name="StrengthForForceCollision" placeholder="请输入一个0-1之间的数" value=1>
+        </div>
+        <div>
+                <input type="button" value="绘制" onclick="drawpic()">
+                <input type="reset" value="重置" onclick="svgclear()">
+            </div>
+      </form>
+    </div>
+    <div class="col-md-8 column" id="svgpic">
+      <h3 class="text-center">
+        结果显示
+      </h3>
+    </div>
+  </div>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/d3.v4.min.js"></script>
+  <script src="js/simulation.js"></script>
+  <script src="js/link.js"></script>
+  <script src="js/jiggle.js"></script>
+  <script src="js/constant.js"></script>
+  <script src="js/manyBody.js"></script>
+  <script src="js/center.js"></script>
+  <script src="js/collide.js"></script>
+  <script src="js/index.js"></script>
+</body> 
+</html>
